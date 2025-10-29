@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Encrypted Chat Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loginScreen" class="login-container">
+  <div class="login-box">
+    <h1>Encrypted Chat</h1>
+    <input id="usernameInput" placeholder="Enter username" />
+    <button id="joinButton">Join Chat</button>
+  </div>
+</div>
+<div id="chatScreen" style="display:none;">
+  <div>
+    <span id="userCount">0 users online</span>
+    <span style="float:right;">AES-256 Encrypted</span>
+  </div>
+  <div id="messages" class="messages-container"></div>
+  <div id="typingIndicator" style="display:none;color:#999;">Someone is typing...</div>
+  <div>
+    <input id="messageInput" autocomplete="off" placeholder="Type a message..."/>
+    <button id="sendButton">Send</button>
+  </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="client.js"></script>
+</body>
+</html>
